@@ -1106,6 +1106,9 @@ HAL_StatusTypeDef HAL_UART_UnRegisterRxEventCallback(UART_HandleTypeDef *huart)
         reception services:
         (+) HAL_UARTEx_RxEventCallback()
 
+    (#) Wakeup from Stop mode Callback:
+        (+) HAL_UARTEx_WakeupCallback()
+
     (#) In Non-Blocking mode transfers, possible errors are split into 2 categories.
         Errors are handled as follows :
        (+) Error is considered as Recoverable and non blocking : Transfer could go till end, but error severity is
