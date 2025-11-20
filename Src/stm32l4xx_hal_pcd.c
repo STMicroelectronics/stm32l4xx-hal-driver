@@ -50,6 +50,9 @@
      (#)Enable PCD transmission and reception:
          (##) HAL_PCD_Start();
 
+     (#)NOTE: For applications not using double buffer mode, define the symbol
+               'USE_USB_DOUBLE_BUFFER' as 0 to reduce the driver's memory footprint.
+
   @endverbatim
   ******************************************************************************
   */
@@ -1422,8 +1425,9 @@ void HAL_PCD_IRQHandler(PCD_HandleTypeDef *hpcd)
       {
         if (hpcd->OUT_ep[epnum].is_iso_incomplete == 1U)
         {
-          /* Abort current transaction and disable the EP */
-          (void)HAL_PCD_EP_Abort(hpcd, (uint8_t)epnum);
+          /* disable the EP */
+          USBx_OUTEP(epnum)->DOEPCTL |= (USB_OTG_DOEPCTL_SNAK);
+          USBx_OUTEP(epnum)->DOEPCTL |= (USB_OTG_DOEPCTL_EPDIS);
         }
       }
     }
@@ -1457,7 +1461,7 @@ void HAL_PCD_IRQHandler(PCD_HandleTypeDef *hpcd)
 
         if ((hpcd->OUT_ep[epnum].type == EP_TYPE_ISOC) &&
             ((RegVal & USB_OTG_DOEPCTL_EPENA) == USB_OTG_DOEPCTL_EPENA) &&
-            (((RegVal & (0x1U << 16)) >> 16U) == (hpcd->FrameNumber & 0x1U)))
+            (((RegVal & (0x1UL << 16)) >> 16U) == (hpcd->FrameNumber & 0x1U)))
         {
           hpcd->OUT_ep[epnum].is_iso_incomplete = 1U;
 
@@ -2584,7 +2588,7 @@ static HAL_StatusTypeDef PCD_EP_ISR_Handler(PCD_HandleTypeDef *hpcd)
         }
         else
         {
-           ep->xfer_buff += count;
+          ep->xfer_buff += count;
           (void)USB_EPStartXfer(hpcd->Instance, ep);
         }
       }
