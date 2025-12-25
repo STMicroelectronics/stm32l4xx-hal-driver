@@ -935,8 +935,10 @@ HAL_StatusTypeDef FLASH_WaitForLastOperation(uint32_t Timeout);
 
 #if defined (STM32L4P5xx) || defined (STM32L4Q5xx) || defined (STM32L4R5xx) || defined (STM32L4R7xx) || defined (STM32L4R9xx) || defined (STM32L4S5xx) || defined (STM32L4S7xx) || defined (STM32L4S9xx)
 #define IS_OB_USER_TYPE(TYPE)              (((TYPE) <= (uint32_t)0xFFFFU) && ((TYPE) != 0U))
-#elif defined(STM32L471xx) || defined(STM32L475xx) || defined(STM32L476xx) || defined(STM32L485xx) || defined(STM32L486xx) || defined(STM32L496xx) || defined(STM32L4A6xx)
+#elif defined(STM32L471xx) || defined(STM32L475xx) || defined(STM32L476xx) || defined(STM32L485xx) || defined(STM32L486xx)
 #define IS_OB_USER_TYPE(TYPE)              (((TYPE) <= (uint32_t)0x1FFFU) && ((TYPE) != 0U))
+#elif defined(STM32L496xx) || defined(STM32L4A6xx)
+#define IS_OB_USER_TYPE(TYPE)              (((TYPE) <= (uint32_t)0x7FFFU) && ((TYPE) != 0U))
 #else
 #define IS_OB_USER_TYPE(TYPE)              (((TYPE) <= (uint32_t)0x7E7FU) && ((TYPE) != 0U) && (((TYPE)&0x0180U) == 0U))
 #endif
