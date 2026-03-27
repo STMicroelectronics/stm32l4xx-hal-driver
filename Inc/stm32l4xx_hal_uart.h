@@ -1344,9 +1344,9 @@ typedef  void (*pUART_RxEventCallbackTypeDef)
   * @retval SET (__BAUDRATE__ is valid) or RESET (__BAUDRATE__ is invalid)
   */
 #if defined(STM32L4R5xx) || defined(STM32L4R7xx) || defined(STM32L4R9xx) || defined(STM32L4S5xx) || defined(STM32L4S7xx) || defined(STM32L4S9xx)
-#define IS_UART_BAUDRATE(__BAUDRATE__) ((__BAUDRATE__) < 15000001U)
+#define IS_UART_BAUDRATE(__BAUDRATE__) ((__BAUDRATE__) <= 15000000U)
 #else
-#define IS_UART_BAUDRATE(__BAUDRATE__) ((__BAUDRATE__) < 10000001U)
+#define IS_UART_BAUDRATE(__BAUDRATE__) ((__BAUDRATE__) <= 10000000U)
 #endif /* STM32L4R5xx || STM32L4R7xx || STM32L4R9xx || STM32L4S5xx || STM32L4S7xx || STM32L4S9xx */
 
 /** @brief  Check UART assertion time.
