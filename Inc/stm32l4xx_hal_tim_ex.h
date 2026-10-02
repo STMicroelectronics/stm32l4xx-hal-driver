@@ -151,7 +151,7 @@ typedef struct
 #endif /* ADC2 && ADC3 */
 
 #define TIM_TIM8_TI1_GPIO           0x00000000U                                           /*!< TIM8 TI1 is connected to GPIO */
-#define TIM_TIM8_TI1_COMP2          TIM8_OR1_TI1_RMP                                      /*!< TIM8 TI1 is connected to COMP1 */
+#define TIM_TIM8_TI1_COMP2          TIM8_OR1_TI1_RMP                                      /*!< TIM8 TI1 is connected to COMP2 */
 #define TIM_TIM8_ETR_GPIO           0x00000000U                                           /*!< TIM8_ETR is connected to GPIO */
 #define TIM_TIM8_ETR_COMP1          TIM8_OR2_ETRSEL_0                                     /*!< TIM8_ETR is connected to COMP1 output */
 #define TIM_TIM8_ETR_COMP2          TIM8_OR2_ETRSEL_1                                     /*!< TIM8_ETR is connected to COMP2 output */
