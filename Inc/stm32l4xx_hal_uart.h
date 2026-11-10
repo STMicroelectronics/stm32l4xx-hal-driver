@@ -1350,16 +1350,16 @@ typedef  void (*pUART_RxEventCallbackTypeDef)
 #endif /* STM32L4R5xx || STM32L4R7xx || STM32L4R9xx || STM32L4S5xx || STM32L4S7xx || STM32L4S9xx */
 
 /** @brief  Check UART assertion time.
-  * @param  __TIME__ 5-bit value assertion time.
+  * @param  __ASSERTIONTIME__ 5-bit value assertion time.
   * @retval Test result (TRUE or FALSE).
   */
-#define IS_UART_ASSERTIONTIME(__TIME__)    ((__TIME__) <= 0x1FU)
+#define IS_UART_ASSERTIONTIME(__ASSERTIONTIME__)    ((__ASSERTIONTIME__) <= 0x1FU)
 
 /** @brief  Check UART deassertion time.
-  * @param  __TIME__ 5-bit value deassertion time.
+  * @param  __DEASSERTIONTIME__ 5-bit value deassertion time.
   * @retval Test result (TRUE or FALSE).
   */
-#define IS_UART_DEASSERTIONTIME(__TIME__) ((__TIME__) <= 0x1FU)
+#define IS_UART_DEASSERTIONTIME(__DEASSERTIONTIME__) ((__DEASSERTIONTIME__) <= 0x1FU)
 
 /**
   * @brief Ensure that UART frame number of stop bits is valid.

@@ -90,16 +90,16 @@ extern "C" {
                                        ((__BURST__) == FMC_WRITE_BURST_ENABLE))
 #define IS_FMC_CONTINOUS_CLOCK(__CCLOCK__) (((__CCLOCK__) == FMC_CONTINUOUS_CLOCK_SYNC_ONLY) || \
                                             ((__CCLOCK__) == FMC_CONTINUOUS_CLOCK_SYNC_ASYNC))
-#define IS_FMC_ADDRESS_SETUP_TIME(__TIME__) ((__TIME__) <= 15U)
-#define IS_FMC_ADDRESS_HOLD_TIME(__TIME__) (((__TIME__) > 0U) && ((__TIME__) <= 15U))
-#define IS_FMC_DATASETUP_TIME(__TIME__) (((__TIME__) > 0U) && ((__TIME__) <= 255U))
+#define IS_FMC_ADDRESS_SETUP_TIME(__SETUPTIME__) ((__SETUPTIME__) <= 15U)
+#define IS_FMC_ADDRESS_HOLD_TIME(__HOLDTIME__) (((__HOLDTIME__) > 0U) && ((__HOLDTIME__) <= 15U))
+#define IS_FMC_DATASETUP_TIME(__DATASETTIME__) (((__DATASETTIME__) > 0U) && ((__DATASETTIME__) <= 255U))
 #define IS_FMC_DATAHOLD_DURATION(__DATAHOLD__) ((__DATAHOLD__) <= 3U)
-#define IS_FMC_TURNAROUND_TIME(__TIME__) ((__TIME__) <= 15U)
+#define IS_FMC_TURNAROUND_TIME(__TURNAROUNDTIME__) ((__TURNAROUNDTIME__) <= 15U)
 #define IS_FMC_CLK_DIV(__DIV__) (((__DIV__) > 1U) && ((__DIV__) <= 16U))
 #define IS_FMC_NORSRAM_DEVICE(__INSTANCE__) ((__INSTANCE__) == FMC_NORSRAM_DEVICE)
 #define IS_FMC_NORSRAM_EXTENDED_DEVICE(__INSTANCE__) ((__INSTANCE__) == FMC_NORSRAM_EXTENDED_DEVICE)
 #if defined(FMC_PCSCNTR_CSCOUNT)
-#define IS_FMC_MAX_CHIP_SELECT_PULSE_TIME(__TIME__) (((__TIME__) >= 1U) && ((__TIME__) <= 65535U))
+#define IS_FMC_MAX_CHIP_SELECT_PULSE_TIME(__MAXCHIPSELECTPULSETIME__) (((__MAXCHIPSELECTPULSETIME__) >= 1U) && ((__MAXCHIPSELECTPULSETIME__) <= 65535U))
 #endif /* FMC_PCSCNTR_CSCOUNT */
 
 #endif /* FMC_BANK1 */
@@ -119,12 +119,12 @@ extern "C" {
                                        ((__SIZE__) == FMC_NAND_ECC_PAGE_SIZE_2048BYTE) || \
                                        ((__SIZE__) == FMC_NAND_ECC_PAGE_SIZE_4096BYTE) || \
                                        ((__SIZE__) == FMC_NAND_ECC_PAGE_SIZE_8192BYTE))
-#define IS_FMC_TCLR_TIME(__TIME__) ((__TIME__) <= 255U)
-#define IS_FMC_TAR_TIME(__TIME__) ((__TIME__) <= 255U)
-#define IS_FMC_SETUP_TIME(__TIME__) ((__TIME__) <= 254U)
-#define IS_FMC_WAIT_TIME(__TIME__) ((__TIME__) <= 254U)
-#define IS_FMC_HOLD_TIME(__TIME__) ((__TIME__) <= 254U)
-#define IS_FMC_HIZ_TIME(__TIME__) ((__TIME__) <= 254U)
+#define IS_FMC_TCLR_TIME(__TCLR__) ((__TCLR__) <= 255U)
+#define IS_FMC_TAR_TIME(__TAR__) ((__TAR__) <= 255U)
+#define IS_FMC_SETUP_TIME(__SETUPTIME__) ((__SETUPTIME__) <= 254U)
+#define IS_FMC_WAIT_TIME(__WAITTIME__) ((__WAITTIME__) <= 254U)
+#define IS_FMC_HOLD_TIME(__HOLDTIME__) ((__HOLDTIME__) <= 254U)
+#define IS_FMC_HIZ_TIME(__HIZTIME__) ((__HIZTIME__) <= 254U)
 #define IS_FMC_NAND_DEVICE(__INSTANCE__) ((__INSTANCE__) == FMC_NAND_DEVICE)
 
 #endif /* FMC_BANK3 */

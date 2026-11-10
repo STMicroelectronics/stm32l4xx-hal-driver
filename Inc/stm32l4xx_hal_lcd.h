@@ -680,14 +680,14 @@ uint32_t             HAL_LCD_GetError(LCD_HandleTypeDef *hlcd);
                                                 ((__DURATION__) == LCD_PULSEONDURATION_6) || \
                                                 ((__DURATION__) == LCD_PULSEONDURATION_7))
 
-#define IS_LCD_DEAD_TIME(__TIME__) (((__TIME__) == LCD_DEADTIME_0) || \
-                                    ((__TIME__) == LCD_DEADTIME_1) || \
-                                    ((__TIME__) == LCD_DEADTIME_2) || \
-                                    ((__TIME__) == LCD_DEADTIME_3) || \
-                                    ((__TIME__) == LCD_DEADTIME_4) || \
-                                    ((__TIME__) == LCD_DEADTIME_5) || \
-                                    ((__TIME__) == LCD_DEADTIME_6) || \
-                                    ((__TIME__) == LCD_DEADTIME_7))
+#define IS_LCD_DEAD_TIME(__DEADTIME__) (((__DEADTIME__) == LCD_DEADTIME_0) || \
+                                    ((__DEADTIME__) == LCD_DEADTIME_1) || \
+                                    ((__DEADTIME__) == LCD_DEADTIME_2) || \
+                                    ((__DEADTIME__) == LCD_DEADTIME_3) || \
+                                    ((__DEADTIME__) == LCD_DEADTIME_4) || \
+                                    ((__DEADTIME__) == LCD_DEADTIME_5) || \
+                                    ((__DEADTIME__) == LCD_DEADTIME_6) || \
+                                    ((__DEADTIME__) == LCD_DEADTIME_7))
 
 #define IS_LCD_BLINK_MODE(__MODE__) (((__MODE__) == LCD_BLINKMODE_OFF)            || \
                                      ((__MODE__) == LCD_BLINKMODE_SEG0_COM0)      || \
