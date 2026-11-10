@@ -2690,7 +2690,7 @@ uint8_t RTC_ByteToBcd2(uint8_t Value)
   while (temp >= 10U)
   {
     bcdhigh++;
-    temp -= 10U;
+    temp -= (uint8_t)10;
   }
 
   return ((uint8_t)(bcdhigh << 4U) | temp);
